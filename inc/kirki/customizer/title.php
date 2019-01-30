@@ -1,0 +1,85 @@
+<?php
+/**
+ * Page Title Setting
+ */
+
+// Site Layout Section
+Preferred_Magazine_Kirki::add_section( 'page_title_panel', array(
+    'title'          => esc_attr__( 'Page Title Settings', 'preferred-magazine' ),
+    'priority'       => 65,
+) );
+// Background Color
+Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
+    'type'        => 'color',
+    'settings'    => 'background',
+    'label'       => __( 'Background Color', 'preferred-magazine' ),
+    'section'     => 'page_title_panel',
+    'default'     => '#f9f9f9',
+    'output'      => array(
+        array(
+            'element' => '.page-header',
+            'property' => 'background',
+        )
+    ),
+) );
+// Color
+Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
+    'type'        => 'color',
+    'settings'    => 'color',
+    'label'       => __( 'Color', 'preferred-magazine' ),
+    'section'     => 'page_title_panel',
+    'default'     => '#000',
+    'output'      => array(
+        array(
+            'element' => '.page-header .entry-title',
+            'property' => 'color',
+        )
+    ),
+) );
+// Font Size
+Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
+    'type'        => 'slider',
+    'settings'    => 'font_size',
+    'label'       => esc_attr__( 'Font Size', 'preferred-magazine' ),
+    'section'     => 'page_title_panel',
+    'default'     => 26,
+    'choices'     => array(
+        'min'  => '8',
+        'max'  => '100',
+        'step' => '1',
+    ),
+    'transport'	  => 'auto',
+    'output'      => array(
+        array(
+            'element' => '.page-header .entry-title',
+            'property' => 'font-size',
+            'units'    => 'px',
+        ),
+    ),
+) );
+// Padding
+Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
+    'type'        => 'slider',
+    'settings'    => 'padding',
+    'label'       => esc_attr__( 'Padding Top/Bottom', 'preferred-magazine' ),
+    'section'     => 'page_title_panel',
+    'default'     => 50,
+    'choices'     => array(
+        'min'  => '5',
+        'max'  => '150',
+        'step' => '1',
+    ),
+    'transport'	  => 'auto',
+    'output'      => array(
+        array(
+            'element' => '.page-header',
+            'property' => 'padding-top',
+            'units'    => 'px',
+        ),
+        array(
+            'element' => '.page-header',
+            'property' => 'padding-bottom',
+            'units'    => 'px',
+        ),
+    ),
+) );
