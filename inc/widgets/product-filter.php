@@ -146,7 +146,7 @@ class Preferred_Magazine_Product_Filter extends Widget_Base {
         <div class="product-category-filter">
             <div class="category-filter-wrap mb-5 text-center">
                 <div class="d-inline">
-                    <a href="#" data-filter="*" class="current text-uppercase position-relative"><?php esc_html_e( 'All product', 'ushop' ); ?></a>
+                    <a href="#" data-filter="*" class="current text-uppercase position-relative"><?php esc_html_e( 'All product', 'preferred-magazine' ); ?></a>
                     <?php
 
                     $prod_cat_args = array(

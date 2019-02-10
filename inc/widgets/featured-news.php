@@ -93,8 +93,8 @@ class Preferred_Magazine_Featured_News extends Widget_Base {
             [
                 'label' => __( 'Title', 'preferred-magazine' ),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __( 'Featured News', 'preferred-magazine' ),
-                'placeholder' => __( 'Featured News', 'preferred-magazine' ),
+                'default' => __( 'Title', 'preferred-magazine' ),
+                'placeholder' => __( 'Title', 'preferred-magazine' ),
             ]
         );
         $this->add_control(
@@ -214,7 +214,7 @@ class Preferred_Magazine_Featured_News extends Widget_Base {
             <?php if( $settings['title'] != '' ) : ?>
 
                 <div class="featured-news-title">
-                    <h2><?php echo esc_html( $settings['title'] ); ?></h2>
+                    <h2 class="mb-0"><?php echo esc_html( $settings['title'] ); ?></h2>
                 </div>
 
             <?php endif; ?>

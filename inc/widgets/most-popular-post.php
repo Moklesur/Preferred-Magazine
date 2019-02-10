@@ -196,7 +196,7 @@ class Preferred_Magazine_Most_Popular_Post extends Widget_Base {
             <?php if( $settings['title'] != '' ) : ?>
 
                 <div class="most-popular-post-title">
-                    <h2><?php echo esc_html( $settings['title'] ); ?></h2>
+                    <h2 class="mb-0"><?php echo esc_html( $settings['title'] ); ?></h2>
                 </div>
 
             <?php endif; ?>
@@ -298,12 +298,12 @@ class Preferred_Magazine_Most_Popular_Post extends Widget_Base {
                                 if( $layout != "2" ) { ?>
 
                                     <p class="mb-05"><?php echo esc_html( wp_trim_words( get_the_content(), 15, '...' ) ); ?></p>
-                                    <a class="read-more" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'read more >', 'preferred-magazine' )?></a>
+                                    <a class="read-more" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'read more', 'preferred-magazine' )?></a>
                                 <?php } else {
 
                                     if ( $query->current_post == 0 ) { ?>
                                         <p class="mb-05"><?php echo esc_html( wp_trim_words( get_the_content(), 15, '...' ) ); ?></p>
-                                        <a class="read-more" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'read more >', 'preferred-magazine' )?></a>
+                                        <a class="read-more" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'read more', 'preferred-magazine' )?></a>
                                     <?php }
                                 } ?>
 

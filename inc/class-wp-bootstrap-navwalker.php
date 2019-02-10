@@ -102,10 +102,19 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			// reasign any filtered classes back to the $classes array.
 			$classes = apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args );
 			$class_names = join( ' ', $classes );
+			$dropdown_icon = $depth_active = '';
+
 			if ( $args->has_children ) {
-				$class_names .= ' dropdown xs-dropdown dropdown-arrow-down';
+
+                if ( $depth > 0 ) {
+                    $depth_active .= ' menu-xs-tri-xs';
+                }
+
+				$class_names .= ' dropdown dropdown-arrow-down';
+                $dropdown_icon .= '<i class="menu-xs-tri ion-arrow-down-b ml-2'.$depth_active.'"></i>';
 			}
-			if ( in_array( 'current-menu-item', $classes, true ) || in_array( 'current-menu-parent', $classes, true ) ) {
+
+            if ( in_array( 'current-menu-item', $classes, true ) || in_array( 'current-menu-parent', $classes, true ) ) {
 				$class_names .= ' active';
 			}
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -134,9 +143,9 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$atts['href'] 	= ! empty( $item->url ) ? $item->url : '';
 				// if we are in a dropdown then the the class .dropdown-item
 				// should be used instead of .nav-link.
-				if ( $depth > 0 ) {
-					$atts['class']	= 'dropdown-item';
-				} else {
+                if ( $depth > 0 ) {
+                    $atts['class']	= 'dropdown-item';
+                } else {
 					$atts['class']	= 'nav-link';
 				}
 			}
@@ -165,7 +174,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				}
 			}
 			$item_output = $args->before;
-			$item_output .= '<a' . $attributes . '><span>';
+			$item_output .= '<a' . $attributes . '>';
 
 			// initiate empty icon var then if we have a string containing icon classes...
 			$icon_html = '';
@@ -174,7 +183,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$icon_html = '<i class="' . esc_attr( $icon_class_string ) . '" aria-hidden="true"></i> ';
 			}
 			$item_output .= $args->link_before . $icon_html . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-			$item_output .= '</span></a>';
+			$item_output .= $dropdown_icon.'</a>';
 			$item_output .= $args->after;
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 

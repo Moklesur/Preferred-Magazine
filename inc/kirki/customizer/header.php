@@ -265,11 +265,11 @@ Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
     'default'     => array(
         'font-family'    => 'Roboto',
         'variant'        => '500',
-        'font-size'      => '16px',
+        'font-size'      => '13px',
         'line-height'    => 'inherit',
-        'letter-spacing' => '0',
+        'letter-spacing' => '0.3px',
         'color'          => '#807f7f',
-        'text-transform' => 'capitalize'
+        'text-transform' => 'uppercase'
     ),
     'priority'    => 10,
     'transport'	  => 'auto',
@@ -375,16 +375,6 @@ Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
         'max'  => 20,
         'step' => 1,
     ),
-) );
-// Slider
-Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
-    'type'        => 'toggle',
-    'settings'    => 'slider_layout_2',
-    'label'       => esc_attr__( 'Enable Slider? ( Pro )', 'preferred-magazine' ),
-    'description' => 'This option work for layout 2',
-    'section'     => 'featured_posts',
-    'default'     => false,
-    'priority'    => 20,
 ) );
 
 /**

@@ -40,7 +40,7 @@ Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
     'settings'    => 'footer_bg',
     'label'       => __( 'Footer Background Color', 'preferred-magazine' ),
     'section'     => 'footer_design',
-    'default'     => '#252525',
+    'default'     => '#30373b',
     'transport'	  => 'auto',
     'output'      => array(
         array(
@@ -70,7 +70,7 @@ Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
     'settings'    => 'footer_text_color',
     'label'       => __( 'Footer Text Color', 'preferred-magazine' ),
     'section'     => 'footer_design',
-    'default'     => '#fff',
+    'default'     => '#989898',
     'transport'	  => 'auto',
     'output'      => array(
         array(
@@ -127,7 +127,7 @@ Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
     'settings'    => 'footer_padding_top',
     'label'       => esc_attr__( 'Footer Padding Top', 'preferred-magazine' ),
     'section'     => 'footer_design',
-    'default'     => 20,
+    'default'     => 30,
     'choices'     => array(
         'min'  => '0',
         'max'  => '100',
@@ -148,7 +148,7 @@ Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
     'settings'    => 'footer_padding_bottom',
     'label'       => esc_attr__( 'Footer Padding Bottom', 'preferred-magazine' ),
     'section'     => 'footer_design',
-    'default'     => 20,
+    'default'     => 30,
     'choices'     => array(
         'min'  => '0',
         'max'  => '100',

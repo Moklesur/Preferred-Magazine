@@ -36,7 +36,7 @@
         if ( ('.category-post-slider').length ) {
             $( '.post-slider' ).each( function() {
                 $(this).slick({
-                    slidesToShow: 3,
+                    slidesToShow: 4,
                     autoplay: true,
                     nextArrow: '<i class="ion-ios-arrow-right slider-right arrow-position f-2x"></i>',
                     prevArrow: '<i class="ion-ios-arrow-left arrow-position f-2x"></i>',
@@ -44,15 +44,21 @@
                     centerMode: true,
                     responsive: [
                         {
-                            breakpoint: 768,
+                            breakpoint: 991,
                             settings: {
                                 slidesToShow: 3
                             }
                         },
                         {
-                            breakpoint: 480,
+                            breakpoint: 768,
                             settings: {
                                 slidesToShow: 2
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1
                             }
                         },
                         {
@@ -182,6 +188,7 @@
                 vertical: true,
                 slidesToShow: 4,
                 slidesToScroll: 1,
+                infinite: true,
                 centerPadding: '0px',
                 autoplay: true,
                 centerMode: true,
@@ -192,24 +199,25 @@
                     {
                         breakpoint: 1024,
                         settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true
+                            slidesToShow: 3
                         }
                     },
                     {
-                        breakpoint: 600,
+                        breakpoint: 991,
                         settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2
                         }
                     },
                     {
                         breakpoint: 480,
                         settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
+                            slidesToShow: 2
                         }
                     }
                 ]
@@ -227,6 +235,11 @@
                 $(".hamburg-overlay").removeClass("hamburg-overlay-has");
             });
         }
+        // Mobile Nav
+        $( '.menu-xs-tri' ).on('click', function ( e ) {
+            e.preventDefault();
+            $(this).parents('.dropdown-arrow-down').find('ul.dropdown-menu').toggleClass('xs-menu-active');
+        });
     });
 
     $(window).load(function() {

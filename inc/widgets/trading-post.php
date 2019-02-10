@@ -118,7 +118,7 @@ class Preferred_Magazine_Trading_Posts extends Widget_Base {
                 'min' => 1,
                 'max' => 25,
                 'step' => 1,
-                'default' => 3,
+                'default' => 4,
             ]
         );
         $this->add_control(
@@ -183,7 +183,7 @@ class Preferred_Magazine_Trading_Posts extends Widget_Base {
                 if ( $query->have_posts() ) :
                     if( $settings['title'] != '' ) : ?>
                         <div class="col-12 post-title">
-                            <h2><?php echo esc_html( $settings['title'] ); ?></h2>
+                            <h2 class="mb-0"><?php echo esc_html( $settings['title'] ); ?></h2>
                         </div>
                     <?php endif;
                     ?><div class="trading-post-slider"><?php
@@ -191,8 +191,8 @@ class Preferred_Magazine_Trading_Posts extends Widget_Base {
                         <div class="col-12 pt-15">
                             <div class="post-item row">
                                 <?php if ( has_post_thumbnail() ) : ?>
-                                    <div class="cat-over-img position-relative col-md-4 col-12">
-                                        <a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_post_thumbnail( 'thumbnail' ); ?></a>
+                                    <div class="cat-over-img position-relative col-md-4 col-12 mb-2 mb-lg-0 mb-md-0">
+                                        <a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_post_thumbnail( 'preferred-magazine-sm-thumb' ); ?></a>
                                     </div>
                                 <?php endif; ?>
                                 <div class="block-contents col-md-8 col-12 align-self-end">

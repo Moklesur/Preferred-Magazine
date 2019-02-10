@@ -47,7 +47,7 @@ if ( ! function_exists( 'preferred_magazine_setup' ) ) :
          */
         add_image_size( 'preferred-magazine-lg-thumb', 800, '700', true );
         add_image_size( 'preferred-magazine-md-thumb', 550, '', true );
-        add_image_size( 'preferred-magazine-sm-thumb', 400, '350', true );
+        add_image_size( 'preferred-magazine-sm-thumb', 400, '400', true );
         add_image_size( 'preferred-magazine-xs-thumb', 100, '100', true );
 
 		// This theme uses wp_nav_menu() in one location.
@@ -330,7 +330,7 @@ function MarginTop(){
 add_filter( 'add_to_cart_text', 'preferred_magazine_product_add_to_cart_text' );
 add_filter( 'woocommerce_product_add_to_cart_text', 'preferred_magazine_product_add_to_cart_text' );
 function preferred_magazine_product_add_to_cart_text() {
-    return __( '', 'woocommerce' );
+    return __( ' ', 'preferred-magazine' );
 }
 // Remove the product rating display on product loops
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );

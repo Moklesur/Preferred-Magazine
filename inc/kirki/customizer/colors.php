@@ -12,11 +12,11 @@ Preferred_Magazine_Kirki::add_field( 'preferred_magazine', array(
     'priority'       => 5,
     'output'      => array(
         array(
-            'element' => '.dropdown-item:focus, .dropdown-item:hover,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,button, input[type="button"], input[type="reset"], input[type="submit"],.main-menu .navbar-nav .current_page_item .nav-link:after,.main-menu .navbar-nav .nav-link:hover:after,trading-post-slider .slick-arrow,#back-to-top,.main-menu .navbar-nav .current-menu-item .nav-link:after,.main-menu .navbar-nav .nav-link:hover:after,.trading-post-slider .slick-arrow,.arrow-position,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover',
+            'element' => '.read-more:hover:after,.dropdown-item:focus, .dropdown-item:hover,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,button, input[type="button"], input[type="reset"], input[type="submit"],.main-menu .navbar-nav .current_page_item .nav-link:after,.main-menu .navbar-nav .nav-link:hover:after,trading-post-slider .slick-arrow,#back-to-top,.main-menu .navbar-nav .current-menu-item .nav-link:after,.main-menu .navbar-nav .nav-link:hover:after,.trading-post-slider .slick-arrow,.arrow-position,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover',
             'property' => 'background',
         ),
         array(
-            'element' => '.top-news-title,.top-news-title,.screen-reader-text:focus,.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,.mobile-bar button,.elementor-widget-wp-widget-categories li',
+            'element' => '.social-top-bar i,.top-news-title,.top-news-title,.screen-reader-text:focus,.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,.mobile-bar button,.elementor-widget-wp-widget-categories li',
             'property' => 'color',
         ),
         array(

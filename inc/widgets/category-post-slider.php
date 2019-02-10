@@ -105,10 +105,10 @@ class Preferred_Magazine_Category_Post_Slider extends Widget_Base {
             [
                 'label' => __( 'Post Limit', 'preferred-magazine' ),
                 'type' => \Elementor\Controls_Manager::NUMBER,
-                'min' => 3,
+                'min' => 1,
                 'max' => 15,
                 'step' => 1,
-                'default' => 3,
+                'default' => 4,
             ]
         );
         $this->add_control(
@@ -186,9 +186,9 @@ class Preferred_Magazine_Category_Post_Slider extends Widget_Base {
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="col-md-4 col-sm-6 col-12">
                             <div class="post-item d-lg-flex d-md-flex align-items-end">
-                               <div class="float-none float-lg-left ">
+                               <div class="float-none float-lg-left category-post-slider-img">
                                    <?php if ( has_post_thumbnail() ) : ?>
-                                       <a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_post_thumbnail('thumbnail'); ?></a>
+                                       <a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_post_thumbnail('preferred-magazine-sm-thumb'); ?></a>
                                    <?php endif; ?>
                                </div>
                                 <div class="block-contents">
