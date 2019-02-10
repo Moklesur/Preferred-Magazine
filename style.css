@@ -150,7 +150,13 @@ input[type="text"], input[type="email"], input[type="url"], input[type="password
 	border-radius: .25rem;
 	padding: .35rem .75rem;
 	outline: 0;
+}
+.wpcf7-form input,.wpcf7-form textarea{
 	margin-top: 15px;
+	width: 100%;
+}
+.wpcf7-form input[type="submit"]{
+	width: auto;
 }
 body.boxed #page{
 	max-width: 1170px;
@@ -188,6 +194,7 @@ body.boxed #page{
 	min-width: 80px;
 }
 .main-menu a {
+	font-family: Roboto, Helvetica, Arial, sans-serif;
 	font-size: 13px;
 	font-weight: 500;
 	line-height: inherit;
