@@ -50,7 +50,7 @@ add_action( 'wp_head', 'preferred_magazine_pingback_header' );
  */
 function block_category_action(){
     $show_featured_posts = get_theme_mod( 'show_featured_posts' );
-    $layout_style = get_theme_mod( 'featured_posts_layout', 'layout_1' );
+    $layout_style = get_theme_mod( 'featured_posts_layout', '1' );
     $featured_post_types = get_theme_mod( 'featured_post_types' );
     $featured_post_types_1 = get_theme_mod( 'featured_post_types_1' );
     $featured_post_types_2 = get_theme_mod( 'featured_post_types_2' );
