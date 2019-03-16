@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-    <main id="main" class="site-main<?php MarginTop(); ?>">
+    <main id="main" class="site-main<?php preferred_magazine_MarginTop(); ?>">
 
         <section class="error-404 not-found">
             <div class="container-fluid">

@@ -21,7 +21,7 @@ if ( get_theme_mod( 'hide_sidebar', true ) ) {
 $blog_layout = get_theme_mod( 'blog_layout', 'blog-layout-2' );
 
 ?>
-    <main id="main" class="site-main<?php MarginTop(); ?>">
+    <main id="main" class="site-main<?php preferred_magazine_MarginTop(); ?>">
         <section class="pm-index">
             <div class="container-fluid">
                 <div class="row">

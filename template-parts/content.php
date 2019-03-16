@@ -21,7 +21,7 @@ $blog_layout_2 = get_theme_mod( 'blog_layout', 'blog-layout-2' );
             if ( $blog_layout_2 != 'blog-layout-2' && get_theme_mod('blog_post_meta', true ) ) :
                 ?>
                 <div class="block-cats">
-                    <?php cat_bg(); ?>
+                    <?php preferred_magazine_cat_bg(); ?>
                 </div>
             <?php endif; ?>
         </div>
@@ -30,12 +30,12 @@ $blog_layout_2 = get_theme_mod( 'blog_layout', 'blog-layout-2' );
     <div class="blog-content-wrap">
         <?php if ( $blog_layout_2 == 'blog-layout-2' && get_theme_mod('blog_post_meta', true ) ) : ?>
             <div class="block-cats">
-                <?php cat_bg(); ?>
+                <?php preferred_magazine_cat_bg(); ?>
             </div>
         <?php
         elseif ( ! has_post_thumbnail() && $blog_layout_2 == 'blog-layout-1' && get_theme_mod('blog_post_meta', true ) ) : ?>
             <div class="block-cats">
-                <?php cat_bg(); ?>
+                <?php preferred_magazine_cat_bg(); ?>
             </div>
         <?php endif; ?>
         <div class="entry-header mb-20">
@@ -50,7 +50,7 @@ $blog_layout_2 = get_theme_mod( 'blog_layout', 'blog-layout-2' );
                 <div class="entry-meta">
                     <?php
 
-                    readingWP();
+                    preferred_magazine_readingWP();
 
                     preferred_magazine_posted_on();
                     preferred_magazine_posted_by();

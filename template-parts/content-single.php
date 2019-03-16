@@ -17,7 +17,7 @@ $class[] = 'block-contents mb-30';
             if ( get_theme_mod('single_post_meta', true ) ) :
                 ?>
                 <div class="block-cats">
-                    <?php cat_bg(); ?>
+                    <?php preferred_magazine_cat_bg(); ?>
                 </div>
             <?php endif; ?>
         </div>
@@ -26,7 +26,7 @@ $class[] = 'block-contents mb-30';
         <?php
         if ( ! has_post_thumbnail() && get_theme_mod('single_post_meta', true ) ) : ?>
             <div class="block-cats">
-                <?php cat_bg(); ?>
+                <?php preferred_magazine_cat_bg(); ?>
             </div>
         <?php
         endif;
@@ -37,7 +37,7 @@ $class[] = 'block-contents mb-30';
                 <div class="entry-meta">
                     <?php
 
-                    readingWP();
+                    preferred_magazine_readingWP();
 
                     preferred_magazine_posted_on();
                     preferred_magazine_posted_by();

@@ -316,7 +316,7 @@ var measurements = [
   'paddingBottom',
   'marginLeft',
   'marginRight',
-  'marginTop',
+  'preferred_magazine_MarginTop',
   'marginBottom',
   'borderLeftWidth',
   'borderRightWidth',
@@ -438,7 +438,7 @@ function getSize( elem ) {
   var paddingWidth = size.paddingLeft + size.paddingRight;
   var paddingHeight = size.paddingTop + size.paddingBottom;
   var marginWidth = size.marginLeft + size.marginRight;
-  var marginHeight = size.marginTop + size.marginBottom;
+  var marginHeight = size.preferred_magazine_MarginTop + size.marginBottom;
   var borderWidth = size.borderLeftWidth + size.borderRightWidth;
   var borderHeight = size.borderTopWidth + size.borderBottomWidth;
 
@@ -1924,7 +1924,7 @@ proto._getElementOffset = function( elem ) {
   var size = getSize( elem );
   var offset = {
     left: boundingRect.left - thisRect.left - size.marginLeft,
-    top: boundingRect.top - thisRect.top - size.marginTop,
+    top: boundingRect.top - thisRect.top - size.preferred_magazine_MarginTop,
     right: thisRect.right - boundingRect.right - size.marginRight,
     bottom: thisRect.bottom - boundingRect.bottom - size.marginBottom
   };

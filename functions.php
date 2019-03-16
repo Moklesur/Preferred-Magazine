@@ -16,13 +16,6 @@ if ( ! function_exists( 'preferred_magazine_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function preferred_magazine_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on preferred magazine, use a find and replace
-		 * to change 'preferred-magazine' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'preferred-magazine', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -229,7 +222,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' )) {
 /**
  * Reading Time WP.
  */
-function readingWP(){
+function preferred_magazine_readingWP(){
     if ( class_exists( 'Reading_Time_WP' )) {
         echo '<span class="mr-2">'.do_shortcode('[rt_reading_time postfix="mins read"]').'</span>';
     }
@@ -238,16 +231,16 @@ function readingWP(){
 /**
  * Post Category BG Color
  */
-function cat_bg(){
+function preferred_magazine_cat_bg(){
     ?>
     <div class="category-bg">
         <?php
         $categories_list = get_the_category();
         foreach( $categories_list as $category ){
-            $cat_bg_color = get_theme_mod( 'category_color_' . $category->term_id );
+            $preferred_magazine_cat_bg_color = get_theme_mod( 'category_color_' . $category->term_id );
 
-            if ( $cat_bg_color != '' ){
-                echo '<a class="category-has-bg" href="' . esc_url( get_category_link( $category->term_id ) ) . '" style="background:' . esc_attr( $cat_bg_color ) . '">'. esc_html( $category->cat_name ) .'</a>';
+            if ( $preferred_magazine_cat_bg_color != '' ){
+                echo '<a class="category-has-bg" href="' . esc_url( get_category_link( $category->term_id ) ) . '" style="background:' . esc_attr( $preferred_magazine_cat_bg_color ) . '">'. esc_html( $category->cat_name ) .'</a>';
             }else{
                 echo '<a class="category-no-bg" href="' . esc_url( get_category_link( $category->term_id ) ) . '">'. esc_html( $category->cat_name ) .'</a>';
             }
@@ -266,27 +259,27 @@ add_action( 'tgmpa_register', 'preferred_magazine_active_plugins' );
 function preferred_magazine_active_plugins() {
     $plugins = array(
         array(
-            'name'      => 'Elementor Page Builder by Elementor',
+            'name'      => __( 'Elementor Page Builder by Elementor', 'preferred-magazine' ),
             'slug'      => 'elementor',
             'required'  => false,
         ),
         array(
-            'name'      => 'Contact Form 7',
+            'name'      => __( 'Contact Form 7', 'preferred-magazine' ),
             'slug'      => 'contact-form-7',
             'required'  => false,
         ),
         array(
-            'name'      => 'Reading Time WP',
+            'name'      => __( 'Reading Time WP', 'preferred-magazine' ),
             'slug'      => 'reading-time-wp',
             'required'  => false,
         ),
         array(
-            'name'      => 'kirki Customizer',
+            'name'      => __( 'kirki Customizer', 'preferred-magazine' ),
             'slug'      => 'kirki',
             'required'  => false,
         ),
         array(
-            'name'      => 'WooCommerce',
+            'name'      => __( 'WooCommerce', 'preferred-magazine' ),
             'slug'      => 'woocommerce',
             'required'  => false,
         )
@@ -317,7 +310,7 @@ function preferred_magazine_kirki_plugin_dismissed() {
 /**
  * Margin Top
  */
-function MarginTop(){
+function preferred_magazine_MarginTop(){
     if ( ! is_front_page() ){
         echo ' margin-top';
     }

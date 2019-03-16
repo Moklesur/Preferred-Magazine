@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-    <main class="left-sidebar-page<?php MarginTop(); ?>">
+    <main class="left-sidebar-page<?php preferred_magazine_MarginTop(); ?>">
         <section>
             <div class="container-fluid">
                 <div class="row">

@@ -14,7 +14,7 @@
     <div class="post-thumb-items<?php echo ( has_post_thumbnail() ) ? ' mb-30 has-items-thumb' : ''; ?> position-relative">
         <?php preferred_magazine_post_thumbnail(); ?>
         <div class="block-cats">
-            <?php cat_bg(); ?>
+            <?php preferred_magazine_cat_bg(); ?>
         </div>
     </div>
 
@@ -26,7 +26,7 @@
             <div class="entry-meta">
                 <?php
 
-                readingWP();
+                preferred_magazine_readingWP();
 
                 preferred_magazine_posted_on();
                 preferred_magazine_posted_by();

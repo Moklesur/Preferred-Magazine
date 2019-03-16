@@ -441,7 +441,7 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
     width: childrenRect.width,
     height: childrenRect.height
   });
-  offsets.marginTop = 0;
+  offsets.preferred_magazine_MarginTop = 0;
   offsets.marginLeft = 0;
 
   // Subtract margins of documentElement in case it's being used as parent
@@ -449,16 +449,16 @@ function getOffsetRectRelativeToArbitraryNode(children, parent) {
   // differently when margins are applied to it. The margins are included in
   // the box of the documentElement, in the other cases not.
   if (!isIE10 && isHTML) {
-    const marginTop = +styles.marginTop.split('px')[0];
+    const preferred_magazine_MarginTop = +styles.preferred_magazine_MarginTop.split('px')[0];
     const marginLeft = +styles.marginLeft.split('px')[0];
 
-    offsets.top -= borderTopWidth - marginTop;
-    offsets.bottom -= borderTopWidth - marginTop;
+    offsets.top -= borderTopWidth - preferred_magazine_MarginTop;
+    offsets.bottom -= borderTopWidth - preferred_magazine_MarginTop;
     offsets.left -= borderLeftWidth - marginLeft;
     offsets.right -= borderLeftWidth - marginLeft;
 
-    // Attach marginTop and marginLeft because in some circumstances we may need them
-    offsets.marginTop = marginTop;
+    // Attach preferred_magazine_MarginTop and marginLeft because in some circumstances we may need them
+    offsets.preferred_magazine_MarginTop = preferred_magazine_MarginTop;
     offsets.marginLeft = marginLeft;
   }
 
@@ -479,7 +479,7 @@ function getViewportOffsetRectRelativeToArtbitraryNode(element) {
   const scrollLeft = getScroll(html, 'left');
 
   const offset = {
-    top: scrollTop - relativeOffset.top + relativeOffset.marginTop,
+    top: scrollTop - relativeOffset.top + relativeOffset.preferred_magazine_MarginTop,
     left: scrollLeft - relativeOffset.left + relativeOffset.marginLeft,
     width,
     height
@@ -544,7 +544,7 @@ function getBoundaries(popper, reference, padding, boundariesElement) {
     // In case of HTML, we need a different computation
     if (boundariesNode.nodeName === 'HTML' && !isFixed(offsetParent)) {
       const { height, width } = getWindowSizes();
-      boundaries.top += offsets.top - offsets.marginTop;
+      boundaries.top += offsets.top - offsets.preferred_magazine_MarginTop;
       boundaries.bottom = height + offsets.top;
       boundaries.left += offsets.left - offsets.marginLeft;
       boundaries.right = width + offsets.left;
@@ -640,7 +640,7 @@ function getReferenceOffsets(state, popper, reference) {
  */
 function getOuterSizes(element) {
   const styles = window.getComputedStyle(element);
-  const x = parseFloat(styles.marginTop) + parseFloat(styles.marginBottom);
+  const x = parseFloat(styles.preferred_magazine_MarginTop) + parseFloat(styles.marginBottom);
   const y = parseFloat(styles.marginLeft) + parseFloat(styles.marginRight);
   const result = {
     width: element.offsetWidth + y,

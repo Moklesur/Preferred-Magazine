@@ -7,7 +7,7 @@
  */
 get_header();
 ?>
-    <main class="ride-sidebar-page<?php MarginTop(); ?>">
+    <main class="ride-sidebar-page<?php preferred_magazine_MarginTop(); ?>">
         <section>
             <div class="container-fluid">
                 <div class="row">

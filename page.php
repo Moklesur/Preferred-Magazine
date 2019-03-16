@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-    <main id="main" class="site-main<?php MarginTop(); ?>">
+    <main id="main" class="site-main<?php preferred_magazine_MarginTop(); ?>">
         <section class="page-content">
             <?php
             if( ! is_front_page() ):

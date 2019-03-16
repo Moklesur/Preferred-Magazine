@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-    <main class="full-width-page<?php MarginTop(); ?>">
+    <main class="full-width-page<?php preferred_magazine_MarginTop(); ?>">
         <section>
             <div class="container-fluid">
                 <div class="row">

@@ -99,13 +99,13 @@ function block_category_action(){
                                             </a>
                                             <div class="img-shadow">
                                                 <div class="block-cats">
-                                                    <?php cat_bg(); ?>
+                                                    <?php preferred_magazine_cat_bg(); ?>
                                                 </div>
                                                 <h2>
                                                     <a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo esc_html( get_the_title() ); ?></a>
                                                 </h2>
                                                 <div class="meta-data">
-                                                    <?php readingWP(); ?>
+                                                    <?php preferred_magazine_readingWP(); ?>
                                                     <span>
                                                             <i class="ion-ios-time-outline"></i>
                                                         <?php echo get_the_date(); ?>
@@ -138,7 +138,7 @@ add_action( 'preferred_magazine_block_category', 'block_category_action' );
  *  News Feeds
  *  Top header
  */
-function top_news_feeds(){
+function preferred_magazine_top_news_feeds(){
     ?>
     <div class="col-md-6 col-12 top-news d-flex">
         <p class="d-inline-block mr-1 mb-0">
@@ -186,7 +186,7 @@ function top_news_feeds(){
     </div><!-- .top-news -->
     <?php
 }
-add_action( 'preferred_magazine_news_feed', 'top_news_feeds' );
+add_action( 'preferred_magazine_news_feed', 'preferred_magazine_top_news_feeds' );
 /**
  *  Social Media Links
  */

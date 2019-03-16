@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-    <main id="main" class="site-main<?php MarginTop(); ?>">
+    <main id="main" class="site-main<?php preferred_magazine_MarginTop(); ?>">
         <section class="archive-pm">
             <div class="page-header col-12 text-center mb-20">
                 <?php

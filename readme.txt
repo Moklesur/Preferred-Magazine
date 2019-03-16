@@ -3,7 +3,7 @@
 Contributors: themetim
 Requires at least: 4.5
 Tested up to: 4.8
-Stable tag: 1.0
+Stable tag: 1.1
 
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, full-width-template, left-sidebar, right-sidebar, custom-colors, custom-header, theme-options
 
@@ -24,6 +24,10 @@ Preferred Magazine is a Responsive HTML5 and CSS3 WordPress Theme created with B
 
 = 1.0 - Nov 11 2018 =
 * Initial release
+= 1.1 - Feb 11 2019 =
+* Prefixed
+* Plugin ( translatable )
+* Remove .pot file path in functions.php
 
 == Credits ==
 
@@ -66,7 +70,7 @@ Preferred Magazine is a Responsive HTML5 and CSS3 WordPress Theme created with B
   Licensed GPLv3 for open source use
 
 
-* Image (used in screenshot)
+* Image (used in screenshots)
 https://pixabay.com/en/balancing-chair-fashion-man-model-1868051/
 https://pixabay.com/en/fog-coniferous-forest-spruce-forest-3622519/
 https://pixabay.com/en/attractive-beautiful-cute-face-1846127/
