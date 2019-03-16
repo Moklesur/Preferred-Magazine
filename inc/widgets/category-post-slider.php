@@ -51,7 +51,7 @@ class Preferred_Magazine_Category_Post_Slider extends Widget_Base {
      * @return string Widget icon.
      */
     public function get_icon() {
-        return 'fa fa-code';
+        return 'fa fa-sliders';
     }
 
     /**
@@ -65,7 +65,7 @@ class Preferred_Magazine_Category_Post_Slider extends Widget_Base {
      * @return array Widget categories.
      */
     public function get_categories() {
-        return [ 'basic' ];
+        return [ 'preferred_magazine' ];
     }
 
     /**

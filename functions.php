@@ -334,3 +334,20 @@ function preferred_magazine_product_add_to_cart_text() {
 }
 // Remove the product rating display on product loops
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+
+/**
+ * @param $elements_manager
+ * elementor Category Name
+ */
+function preferred_magazine_elementor_widget_categories( $elements_manager ) {
+
+    $elements_manager->add_category(
+        'preferred_magazine',
+        [
+            'title' => __( 'PM Widgets', 'preferred-magazine' ),
+            'icon' => 'fa fa-plug',
+        ]
+    );
+
+}
+add_action( 'elementor/elements/categories_registered', 'preferred_magazine_elementor_widget_categories' );
