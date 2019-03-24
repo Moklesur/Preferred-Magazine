@@ -114,16 +114,6 @@ function preferred_magazine_widgets_init() {
 		'before_title'  => '<h2 class="widget-title text-uppercase">',
 		'after_title'   => '</h2>',
 	) );
-	// Hamburg Widget
-    register_sidebar( array(
-        'name'          => esc_html__( 'Hamburg', 'preferred-magazine' ),
-        'id'            => 'hamburg',
-        'description'   => esc_html__( 'Add widgets here.', 'preferred-magazine' ),
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h4 class="widget-title text-uppercase">',
-        'after_title'   => '</h4>',
-    ) );
 
     $args_footer_widgets = array(
         'name'          => __( 'Footer %d', 'preferred-magazine' ),
@@ -316,15 +306,6 @@ function preferred_magazine_MarginTop(){
     }
 }
 
-/**
- * WooCommerce
- * Add To Cart Button to icon
- */
-add_filter( 'add_to_cart_text', 'preferred_magazine_product_add_to_cart_text' );
-add_filter( 'woocommerce_product_add_to_cart_text', 'preferred_magazine_product_add_to_cart_text' );
-function preferred_magazine_product_add_to_cart_text() {
-    return __( ' ', 'preferred-magazine' );
-}
 // Remove the product rating display on product loops
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
 
@@ -336,10 +317,10 @@ function preferred_magazine_elementor_widget_categories( $elements_manager ) {
 
     $elements_manager->add_category(
         'preferred_magazine',
-        [
-            'title' => __( 'PM Widgets', 'preferred-magazine' ),
-            'icon' => 'fa fa-plug',
-        ]
+            array(
+                'title' => __( 'PM Widgets', 'preferred-magazine' ),
+                'icon' => 'fa fa-plug',
+            )
     );
 
 }

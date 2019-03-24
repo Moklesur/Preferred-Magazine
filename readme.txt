@@ -3,9 +3,9 @@
 Contributors: themetim
 Requires at least: 4.5
 Tested up to: 4.8
-Stable tag: 1.1
+Stable tag: 1.5
 
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, full-width-template, left-sidebar, right-sidebar, custom-colors, custom-header, theme-options
+Tags: blog, news, e-commerce, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, full-width-template, left-sidebar, right-sidebar, custom-colors, custom-header, theme-options
 
 
 == License ==
@@ -18,16 +18,34 @@ preferred magazine is distributed under the terms of the GNU GPL
 
 == Description ==
 
-Preferred Magazine is a Responsive HTML5 and CSS3 WordPress Theme created with Bootstrap 4 and ideal for news websites. Comes with the most popular Elementor page builder. Fully customizable category posts with page builder widget. Drag and Drop categorized news sections within page. Unlimited color and typography choices. Customizable background, header, footer and sidebar section.
+Preferred magazine is currently one of the highly decorated and modern responsive themes. This is a permanent solution to the blog and magazine websites. WordPress Elementor Page Builder develops its foundation. This theme supports WooCommerce, live customizer.  There are 6 categories of widgets available here for any post. All of the customization tools have been arranged in a smooth manner in the admin panel. As a result, anybody can customize his site according to his requirements. Unique header section and advance typography option are two wonderful features of this theme. You can use unlimited color and can colorize the categories too as you desire. You will find this theme SEO and mobile friendly. There are more of the popular features such as unique social icon, stylish page title, footer section, Dropdown menu, different blog layout, cross browser support. This theme offers you all kinds of customer support at any time.
 
 == Changelog ==
 
-= 1.0 - Nov 11 2018 =
-* Initial release
+= 1.5 - Mar 17 2019 =
+* ERROR Strings should have translatable content
+* ERROR Short array syntax (open) is available since 5.4
+* ERROR Short array syntax (close) is available since 5.4
+* ERROR Overriding WordPress globals is prohibited. Found assignment to $tab
+* ERROR File has mixed line endings; this may cause incorrect results
+* ERROR File has mixed line endings; this may cause incorrect results
+* ERROR File has mixed line endings; this may cause incorrect results
+
+= 1.4 - Mar 17 2019 =
+* screenshot.png file change
+
+= 1.3 - Mar 17 2019 =
+* Elementor Widget Category
+* All Free image linked to the site
+
 = 1.1 - Feb 11 2019 =
 * Prefixed
 * Plugin ( translatable )
 * Remove .pot file path in functions.php
+
+= 1.0 - Nov 11 2018 =
+* Initial release
+
 
 == Credits ==
 
@@ -69,9 +87,44 @@ Preferred Magazine is a Responsive HTML5 and CSS3 WordPress Theme created with B
   Copyright 2017 Metafizzy
   Licensed GPLv3 for open source use
 
-
 * Image (used in screenshots)
-https://pixabay.com/en/balancing-chair-fashion-man-model-1868051/
-https://pixabay.com/en/fog-coniferous-forest-spruce-forest-3622519/
-https://pixabay.com/en/attractive-beautiful-cute-face-1846127/
-https://pixabay.com/en/fashion-fashionable-hairdo-man-1866574/
+
+Pexels Images,
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo-license/
+
+Victor Freitas
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/people-in-gym-685534/
+
+Pixabay
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/person-riding-bike-making-trek-on-thin-air-71104/
+
+juan mendez
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/smiling-woman-looking-upright-standing-against-yellow-wall-1536619/
+
+EVG photos
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/selective-focus-photography-of-smiling-woman-wearing-red-hat-during-snowy-day-1381558/
+
+Godisable Jacob
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/shallow-focus-photography-of-woman-wearing-gray-and-yellow-spaghetti-strap-dress-sitting-on-chair-944761/
+
+Godisable Jacob
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/woman-wearing-yellow-sleeveless-dress-1252982/
+
+bruce mars
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/woman-wearing-sunglasses-with-assorted-paper-bags-994234/
+
+Stocksnap Images
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/license
+
+Toni Cuenca
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/KAA9DF2J9I

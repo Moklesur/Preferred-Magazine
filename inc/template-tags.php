@@ -17,20 +17,20 @@ if ( ! function_exists( 'preferred_magazine_posted_on' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
-		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html_x( ' %s', 'post date', 'preferred-magazine' ),
-			'<a class="mr-2" href="' . esc_url( get_permalink() ) . '" rel="bookmark"><i class="ion-ios-time-outline"></i> ' . $time_string . '</a>'
-		);
+        $time_string = sprintf(
+            $time_string,
+            esc_attr( get_the_date( DATE_W3C ) ),
+            esc_html( get_the_date() ),
+            esc_attr( get_the_modified_date( DATE_W3C ) ),
+            esc_html( get_the_modified_date() )
+        );
 
-		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+        printf(
+            '<a class="mr-2" href="%1$s" rel="bookmark"><i class="ion-ios-time-outline"></i> %2$s</a>',
+            esc_url( get_permalink() ),
+            $time_string
+        );
 
 	}
 endif;
@@ -40,15 +40,15 @@ if ( ! function_exists( 'preferred_magazine_posted_by' ) ) :
 	 * Prints HTML with meta information for the current author.
 	 */
 	function preferred_magazine_posted_by() {
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html_x( ' %s', 'post author', 'preferred-magazine' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-		);
-
-		echo '<span class="byline"><i class="ion-android-person"></i> ' . $byline . '</span>'; // WPCS: XSS OK.
-
-	}
+        printf(
+        /* translators: 1: SVG icon. 2: post author, only visible to screen readers. 3: author link. */
+            '<span class="byline">%1$s<span class="screen-reader-text">%2$s</span><span class="author vcard"><a class="url fn n" href="%3$s">%4$s</a></span></span>',
+            '<i class="ion-android-person"></i> ',
+            __( 'Posted by', 'preferred-magazine' ),
+            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+            esc_html( get_the_author() )
+        );
+    }
 endif;
 
 if ( ! function_exists( 'preferred_magazine_entry_footer' ) ) :

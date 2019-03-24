@@ -96,24 +96,8 @@
                                             <i class="ion-android-cart"></i>
                                         </a>
                                     </div>
-                                <?php endif;
-                                if ( get_theme_mod( 'hide_hamburg' ) ) : ?>
-                                    <div class="hamburg d-inline">
-                                        <a class="hamburg-action" href="#"><i class="ion-android-menu"></i></a>
-                                    </div>
-                                    <div class="hamburg-overlay"></div>
-                                    <div class="hamburg-wrapper">
-                                        <span class="hamburg-close"><i class="ion-close"></i></span>
-                                        <div class="hamburg-content">
-                                            <?php
-                                            if ( is_active_sidebar( 'hamburg' ) ) :
-                                                dynamic_sidebar( 'hamburg' );
-                                            endif;
-                                            ?>
-                                        </div>
-                                    </div>
-                                <?php endif;
-                                ?>
+                                <?php endif; ?>
+
                                 <div class="mobile-bar d-inline">
                                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#preferred-magazine-navbar-collapse" aria-controls="preferred-magazine-navbar-collapse" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'preferred-magazine' ); ?>">
                                         <span><?php esc_html_e('Menu', 'preferred-magazine'); ?></span><i class="ion-android-menu"></i>

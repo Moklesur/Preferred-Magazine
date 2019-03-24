@@ -151,7 +151,6 @@ function preferred_magazine_top_news_feeds(){
                     <?php
 
                     $top_news_category = get_theme_mod( 'top_news_category' );
-                    $header_top_bar_post_limit = get_theme_mod( 'header_top_bar_post_limit' ); // this option for PRO USER\'S
 
                     $top_news_cat = '';
 
