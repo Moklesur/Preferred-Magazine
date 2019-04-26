@@ -22,6 +22,27 @@ Preferred magazine is currently one of the highly decorated and modern responsiv
 
 == Changelog ==
 
+= 1.9 - Apr 26 2019 =
+* escape or sanitized.
+
+= 1.8 - Apr 26 2019 =
+* image  License: CC0 1.0 Universal (CC0 1.0)
+* admin notice
+* escape or sanitized.
+
+= 1.7 - Apr 10 2019 =
+* fix text domain
+
+= 1.6 - Apr 07 2019 =
+* Please avoid echo HTML Tags : E.G : functions.php [ line 227 ], there are many instanaces like the example are there, which to be rectified.
+* Please avoid echo direct variable : E.G : echo $preferred_magazine_description; in header.php. Please use escape or sanitized functions.
+* Required :Table of Content is missing in style.css
+* Custom Widget, is part of plugin teritory please move this Widget files to a plugin. File : inside inc/widgetts
+* Make shop page content area full if no widgets are set to the respective sidebar to avoid blank column
+* WooCommerce is a recomended plugin in your theme, please check Shop, and Other listing/archive pages which shows the product. In your theme Shop page is a single column no descriptions are shown.
+* Single Product Page : Doesnot have the Description and Review tabs in proper way. Review tab is missing. [ Suggested : Please test the Unit Test Data for WooCommerce ]
+* Please check the Checkout page design it is completly messed.
+
 = 1.5 - Mar 17 2019 =
 * ERROR Strings should have translatable content
 * ERROR Short array syntax (open) is available since 5.4
@@ -93,33 +114,33 @@ Pexels Images,
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://www.pexels.com/photo-license/
 
-Victor Freitas
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://www.pexels.com/photo/people-in-gym-685534/
-
 Pixabay
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://www.pexels.com/photo/person-riding-bike-making-trek-on-thin-air-71104/
 
+Pixabay
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/blur-close-up-depth-of-field-female-458649/
+
+Pixabay
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/blur-daylight-fashion-girl-461792/
+
+Pixabay
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/acrobat-action-active-adult-461611/
+
+Pixabay
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/apple-close-up-delicious-food-533343/
+
+Pixabay
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://www.pexels.com/photo/attractive-bark-beautiful-beauty-531527/
+
 juan mendez
 License: CC0 1.0 Universal (CC0 1.0)
 Source: https://www.pexels.com/photo/smiling-woman-looking-upright-standing-against-yellow-wall-1536619/
-
-EVG photos
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://www.pexels.com/photo/selective-focus-photography-of-smiling-woman-wearing-red-hat-during-snowy-day-1381558/
-
-Godisable Jacob
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://www.pexels.com/photo/shallow-focus-photography-of-woman-wearing-gray-and-yellow-spaghetti-strap-dress-sitting-on-chair-944761/
-
-Godisable Jacob
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://www.pexels.com/photo/woman-wearing-yellow-sleeveless-dress-1252982/
-
-bruce mars
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://www.pexels.com/photo/woman-wearing-sunglasses-with-assorted-paper-bags-994234/
 
 Stocksnap Images
 License: CC0 1.0 Universal (CC0 1.0)

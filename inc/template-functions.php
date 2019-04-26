@@ -23,7 +23,7 @@ function preferred_magazine_body_classes( $classes ) {
     }
 
     // Adds a class of wide & boxed to site layout
-    if (  get_theme_mod( 'site_layout', 'wide' ) == 'wide' ) {
+    if ( esc_attr( get_theme_mod( 'site_layout', 'wide' ) ) == 'wide' ) {
         $classes[] =  "wide";
 
     }else{
@@ -49,14 +49,12 @@ add_action( 'wp_head', 'preferred_magazine_pingback_header' );
  *  Only Show Home page
  */
 function block_category_action(){
-    $show_featured_posts = get_theme_mod( 'show_featured_posts' );
-    $layout_style = get_theme_mod( 'featured_posts_layout', '1' );
-    $featured_post_types = get_theme_mod( 'featured_post_types' );
-    $featured_post_types_1 = get_theme_mod( 'featured_post_types_1' );
-    $featured_post_types_2 = get_theme_mod( 'featured_post_types_2' );
-    $featured_post_limit = get_theme_mod( 'featured_post_limit', '3' );
-    $slider_layout_2 = get_theme_mod( 'slider_layout_2' );
-
+    $show_featured_posts = absint( get_theme_mod( 'show_featured_posts' ) );
+    $layout_style = esc_attr( get_theme_mod( 'featured_posts_layout', '1' ) );
+    $featured_post_types = esc_attr( get_theme_mod( 'featured_post_types' ) );
+    $featured_post_types_1 = esc_attr( get_theme_mod( 'featured_post_types_1' ) );
+    $featured_post_types_2 = esc_attr( get_theme_mod( 'featured_post_types_2' ) );
+    $featured_post_limit = esc_attr( get_theme_mod( 'featured_post_limit', '3' ) );
 
     $category = $featured_post_types .','. $featured_post_types_1 .','. $featured_post_types_2;
 
@@ -70,7 +68,7 @@ function block_category_action(){
 
                         $block_category = array(
                             'posts_per_page'   => $featured_post_limit,
-                            'cat'   => array($category),
+                            'cat'   => array( $category ),
                             'no_found_rows' => true,
                             'post_status'   => 'publish',
                             'ignore_sticky_posts'   => true
@@ -150,7 +148,7 @@ function preferred_magazine_top_news_feeds(){
                 <div class="carousel-inner">
                     <?php
 
-                    $top_news_category = get_theme_mod( 'top_news_category' );
+                    $top_news_category = esc_attr( get_theme_mod( 'top_news_category' ) );
 
                     $top_news_cat = '';
 
@@ -163,7 +161,7 @@ function preferred_magazine_top_news_feeds(){
                         'no_found_rows'       => true,
                         'post_status'         => 'publish',
                         'ignore_sticky_posts' => true,
-                        'cat'   => array($top_news_cat)
+                        'cat'   => array( $top_news_cat )
                     ) );
 
                     if ( $query->have_posts() ) :

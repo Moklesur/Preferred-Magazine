@@ -18,7 +18,7 @@
             <div class="row">
                 <?php
 
-                if ( get_theme_mod( 'footer_columns' ) == 'four' ) { ?>
+                if ( esc_attr( get_theme_mod( 'footer_columns' ) ) == 'four' ) { ?>
 
                     <div class="col-lg-3 col-md-6 col-sm-6 col-12 footer-top-padding">
                         <?php
@@ -54,7 +54,7 @@
 
                     <?php
 
-                } elseif ( get_theme_mod( 'footer_columns' ) == 'three' ) { ?>
+                } elseif ( esc_attr( get_theme_mod( 'footer_columns' ) ) == 'three' ) { ?>
 
                     <div class="col-lg-4 col-md-4 col-sm-6 col-12 footer-top-padding">
                         <?php
@@ -105,7 +105,9 @@
                 <div class="col-12">
                     <div class="site-info text-center">
                         <a href="<?php echo esc_url( __( 'https://www.themetim.com/', 'preferred-magazine' ) ); ?>">
-                            <?php echo esc_html( get_theme_mod( 'copyright', 'Preferred Magazine powered by themetim' ) ); ?>
+                            <?php
+                            $copyright = get_theme_mod( 'copyright', 'Preferred Magazine powered by themetim' );
+                            echo esc_html( $copyright ); ?>
                         </a>
                     </div><!-- .site-info -->
                 </div>

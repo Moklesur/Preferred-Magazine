@@ -265,7 +265,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 					$fb_output .= ' class="' . $menu_class . '"';
 
 				$fb_output .= '>';
-				$fb_output .= '<li class="nav-item"><a class="nav-link" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_attr( 'Add a menu', 'preferred-magazine' ) . '</a>';
+				$fb_output .= '<li class="nav-item"><a class="nav-link" href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_html( 'Add a menu' ) . '</a>';
 				$fb_output .= '</ul>';
 
 				if ( $container )

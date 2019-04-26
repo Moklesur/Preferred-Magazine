@@ -10,11 +10,11 @@ $class[] = 'block-contents mb-30';
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>
-    <?php if ( has_post_thumbnail() && get_theme_mod('single_featured_image', true ) ) : ?>
+    <?php if ( has_post_thumbnail() && absint( get_theme_mod('single_featured_image', true ) ) ) : ?>
         <div class="post-thumb-items<?php echo ( has_post_thumbnail() ) ? ' has-items-thumb' : ''; ?> position-relative">
             <?php
             preferred_magazine_post_thumbnail();
-            if ( get_theme_mod('single_post_meta', true ) ) :
+            if ( absint( get_theme_mod('single_post_meta', true ) ) ) :
                 ?>
                 <div class="block-cats">
                     <?php preferred_magazine_cat_bg(); ?>
@@ -24,14 +24,14 @@ $class[] = 'block-contents mb-30';
     <?php endif; ?>
     <div class="blog-content-wrap">
         <?php
-        if ( ! has_post_thumbnail() && get_theme_mod('single_post_meta', true ) ) : ?>
+        if ( ! has_post_thumbnail() && absint( get_theme_mod('single_post_meta', true ) ) ) : ?>
             <div class="block-cats">
                 <?php preferred_magazine_cat_bg(); ?>
             </div>
         <?php
         endif;
 
-        if ( 'post' === get_post_type() && get_theme_mod('single_post_meta', true ) ) :
+        if ( 'post' === get_post_type() && absint( get_theme_mod('single_post_meta', true ) ) ) :
             ?>
             <div class="entry-header mb-20">
                 <div class="entry-meta">

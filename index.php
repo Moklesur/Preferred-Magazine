@@ -15,10 +15,10 @@
 get_header();
 
 $col = '12';
-if ( get_theme_mod( 'hide_sidebar', true ) ) {
+if ( absint( get_theme_mod( 'hide_sidebar', true ) ) ) {
     $col = '9 ';
 }
-$blog_layout = get_theme_mod( 'blog_layout', 'blog-layout-2' );
+$blog_layout = esc_attr( get_theme_mod( 'blog_layout', 'blog-layout-2' ) );
 
 ?>
     <main id="main" class="site-main<?php preferred_magazine_MarginTop(); ?>">
@@ -60,9 +60,9 @@ $blog_layout = get_theme_mod( 'blog_layout', 'blog-layout-2' );
                         ?>
                     </div>
                     <?php
-                    if ( get_theme_mod( 'hide_sidebar', true ) ) {
+                    if ( absint( get_theme_mod( 'hide_sidebar', true ) ) ) {
                         get_sidebar();
-                    }?>
+                    } ?>
                 </div>
             </div>
         </section>

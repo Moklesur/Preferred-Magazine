@@ -27,7 +27,7 @@
 
     <header id="masthead" class="site-header">
 
-        <?php if ( get_theme_mod( 'hide_top_bar', true ) ) : ?>
+        <?php if ( absint( get_theme_mod( 'hide_top_bar', true ) ) ) : ?>
         <section class="top-bar pt-2 pb-2">
             <div class="container-fluid">
                 <div class="row">
@@ -66,7 +66,7 @@
                                 $preferred_magazine_description = get_bloginfo( 'description', 'display' );
                                 if ( $preferred_magazine_description || is_customize_preview() ) :
                                     ?>
-                                    <p class="site-description mb-0"><?php echo $preferred_magazine_description; /* WPCS: xss ok. */ ?></p>
+                                    <p class="site-description mb-0"><?php echo esc_html( $preferred_magazine_description ) /* WPCS: xss ok. */ ?></p>
                                 <?php endif; ?>
                             </div><!-- .site-branding -->
 

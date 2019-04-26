@@ -7,18 +7,18 @@
  * @package preferred_magazine
  */
 $class[] = 'block-contents mb-30';
-$class[] .= ( has_post_thumbnail() && get_theme_mod('blog_featured_image', true ) ) ? ' blog-content-wrap-fix' : ' off-featured-image';
+$class[] .= ( has_post_thumbnail() && absint( get_theme_mod('blog_featured_image', true ) ) ) ? ' blog-content-wrap-fix' : ' off-featured-image';
 
-$blog_layout_2 = get_theme_mod( 'blog_layout', 'blog-layout-2' );
+$blog_layout_2 = esc_attr( get_theme_mod( 'blog_layout', 'blog-layout-2' ) );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>
     <?php
-    if ( has_post_thumbnail() && get_theme_mod('blog_featured_image', true ) ) : ?>
+    if ( has_post_thumbnail() && absint( get_theme_mod('blog_featured_image', true ) ) ) : ?>
         <div class="post-thumb-items<?php echo ( has_post_thumbnail() ) ? ' has-items-thumb' : ''; ?> position-relative">
             <?php
             preferred_magazine_post_thumbnail();
-            if ( $blog_layout_2 != 'blog-layout-2' && get_theme_mod('blog_post_meta', true ) ) :
+            if ( $blog_layout_2 != 'blog-layout-2' && absint( get_theme_mod('blog_post_meta', true ) ) ) :
                 ?>
                 <div class="block-cats">
                     <?php preferred_magazine_cat_bg(); ?>
@@ -28,12 +28,12 @@ $blog_layout_2 = get_theme_mod( 'blog_layout', 'blog-layout-2' );
     <?php endif; ?>
 
     <div class="blog-content-wrap">
-        <?php if ( $blog_layout_2 == 'blog-layout-2' && get_theme_mod('blog_post_meta', true ) ) : ?>
+        <?php if ( $blog_layout_2 == 'blog-layout-2' && absint(get_theme_mod('blog_post_meta', true ) ) ) : ?>
             <div class="block-cats">
                 <?php preferred_magazine_cat_bg(); ?>
             </div>
         <?php
-        elseif ( ! has_post_thumbnail() && $blog_layout_2 == 'blog-layout-1' && get_theme_mod('blog_post_meta', true ) ) : ?>
+        elseif ( ! has_post_thumbnail() && $blog_layout_2 == 'blog-layout-1' && absint( get_theme_mod('blog_post_meta', true ) ) ) : ?>
             <div class="block-cats">
                 <?php preferred_magazine_cat_bg(); ?>
             </div>
@@ -45,7 +45,7 @@ $blog_layout_2 = get_theme_mod( 'blog_layout', 'blog-layout-2' );
             else :
                 the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
             endif;
-            if ( 'post' === get_post_type() && get_theme_mod('blog_post_meta', true ) ) :
+            if ( 'post' === get_post_type() && absint( get_theme_mod('blog_post_meta', true ) ) ) :
                 ?>
                 <div class="entry-meta">
                     <?php

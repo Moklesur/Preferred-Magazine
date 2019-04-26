@@ -4,15 +4,44 @@ Theme URI: https://www.themetim.com/wordpress-themes/preferred-magazine/
 Author: themetim
 Author URI: https://www.themetim.com/
 Description: Preferred magazine is currently one of the highly decorated and modern responsive themes. This is a permanent solution to the blog and magazine websites. WordPress Elementor Page Builder develops its foundation. This theme supports WooCommerce, live customizer.  There are 6 categories of widgets available here for any post. All of the customization tools have been arranged in a smooth manner in the admin panel. As a result, anybody can customize his site according to his requirements. Unique header section and advance typography option are two wonderful features of this theme. You can use unlimited color and can colorize the categories too as you desire. You will find this theme SEO and mobile friendly. There are more of the popular features such as unique social icon, stylish page title, footer section, Dropdown menu, different blog layout, cross browser support. This theme offers you all kinds of customer support at any time.
-Version: 1.5
+Version: 1.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: preferred-magazine
 Tags: blog, news, e-commerce, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, full-width-template, left-sidebar, right-sidebar, custom-colors, custom-header, theme-options
 */
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+00. Common
+01. Header
+02. Featured / Recent Post ( Home )
+03. Accessibility
+04. Alignments
+05. Posts and pages
+06. Widgets
+07. Comments
+08. WooCommerce
+09. Footer
+10. Infinite scroll
+11. Media
+12. Captions
+13. Galleries
+14. Responsive
+	01. Max Width 768
+	02. Min Width 1200px And Max Width 1299px
+	03. Min Width 768px And Max Width 991px
+	04. Max Width 767px
+	05. Max Width 480px
+	06. Max Width 375px
+
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Common
+
+00. Common
+
 --------------------------------------------------------------*/
 body{
 	font-family: 'Roboto', sans-serif;
@@ -144,12 +173,14 @@ th, td {
 	font-size: 12px;
 	font-weight: 500;
 }
-input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea, select {
+input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], input[type="range"], input[type="date"], input[type="month"], input[type="week"], input[type="time"], input[type="datetime"], input[type="datetime-local"], input[type="color"], textarea, select,
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea{
 	color: #495057;
 	border: 1px solid #c8c8c8;
 	border-radius: .25rem;
 	padding: .35rem .75rem;
 	outline: 0;
+	line-height: inherit;
 }
 .wpcf7-form input,.wpcf7-form textarea{
 	margin-top: 15px;
@@ -174,7 +205,9 @@ body.boxed #page{
 	width: 100%;
 }
 /*--------------------------------------------------------------
-# Header
+
+01. Header
+
 --------------------------------------------------------------*/
 .top-bar {
 	border-bottom: 1px solid #c8c8c8;
@@ -291,7 +324,9 @@ body.boxed #page{
 	cursor: pointer;
 }
 /*--------------------------------------------------------------
-# Featured / Recent Post ( Home )
+
+02. Featured / Recent Post ( Home )
+
 --------------------------------------------------------------*/
 .pm-featured-news-post .arrow-position{
 	top: 49%;
@@ -543,7 +578,9 @@ body.boxed #page{
 	padding: 0 15px;
 }
 /*--------------------------------------------------------------
-# Accessibility
+
+03. Accessibility
+
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
 .screen-reader-text {
@@ -587,7 +624,9 @@ body.boxed #page{
 }
 
 /*--------------------------------------------------------------
-# Alignments
+
+04. Alignments
+
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
@@ -608,7 +647,9 @@ body.boxed #page{
 	margin-right: auto;
 }
 /*--------------------------------------------------------------
-   ## Posts and pages
+
+05. Posts and pages
+
 --------------------------------------------------------------*/
 .entry-meta i{
 	color: #000;
@@ -713,7 +754,9 @@ body.boxed #page{
     padding: 50px;
 }
 /*--------------------------------------------------------------
-## Widgets
+
+06. Widgets
+
 --------------------------------------------------------------*/
 .elementor-widget-wp-widget-categories ul{
 	list-style: none;
@@ -867,7 +910,9 @@ textarea, .wpcf7-form>p>label {
 }
 
 /*--------------------------------------------------------------
-## Comments
+
+07. Comments
+
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
@@ -900,7 +945,9 @@ textarea, .wpcf7-form>p>label {
 	text-align: right;
 }
 /*--------------------------------------------------------------
-# WooCommerce
+
+08. WooCommerce
+
 --------------------------------------------------------------*/
 .elementor-widget-wp-widget-woocommerce_products h5{
 	font-size: 24px;
@@ -1004,7 +1051,7 @@ textarea, .wpcf7-form>p>label {
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
     margin-bottom: 1.875em;
 }
-.woocommerce.category-filter ul.products li.product,.woocommerce ul.products li, .woocommerce ul.columns-1 li, .woocommerce ul.columns-2 li, .woocommerce ul.columns-3 li {
+.woocommerce.category-filter ul.products li.product,.woocommerce.category-filter ul.products li, .woocommerce.category-filter  ul.columns-1 li, .woocommerce.category-filter ul.columns-2 li, .woocommerce.category-filter  ul.columns-3 li {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
@@ -1071,6 +1118,14 @@ textarea, .wpcf7-form>p>label {
 .woocommerce #respond input#submit.added::after, .woocommerce a.button.added::after, .woocommerce button.button.added::after, .woocommerce input.button.added::after{
     color: #000;
 }
+.woocommerce-products-header__title{
+	text-align: center;
+}
+.woocommerce .term-description {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 30px 15px;
+}
 .woocommerce ul.products li.product .button,.woocommerce ul.products li.product .button:hover {
     background: none;
     border: none;
@@ -1095,8 +1150,44 @@ textarea, .wpcf7-form>p>label {
 .woocommerce #respond input#submit.added::after, .woocommerce a.button.added::after, .woocommerce button.button.added::after, .woocommerce input.button.added::after{
     position: absolute;
 }
+
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-2 {
+	width: 50%;
+	-ms-flex: 0 0 50%;
+	flex: 0 0 50%;
+	max-width: 50%;
+}
+.woocommerce form .form-row-first, .woocommerce form .form-row-last, .woocommerce-page form .form-row-first, .woocommerce-page form .form-row-last {
+	width: 48%;
+}
+.woocommerce form .form-row label, .woocommerce-page form .form-row label {
+	width: 100%;
+	margin: 0;
+}
+.woocommerce .woocommerce-input-wrapper {
+	width: 100%;
+}
+.woocommerce form .col2-set, .woocommerce-page form .col2-set {
+	width: 100%;
+	margin: 0 -15px;
+}
+.woocommerce #customer_details {
+	margin-bottom: 40px;
+}
+#order_review_heading {
+	margin-bottom: 30px;
+}
+.woocommerce-checkout-payment {
+	margin-top: 30px;
+}
+.woocommerce .wc-proceed-to-checkout a.button.alt {
+	padding: 1.2rem 1.1rem;
+	font-size: 15px;
+}
 /*--------------------------------------------------------------
-# Footer
+
+09. Footer
+
 --------------------------------------------------------------*/
 .site-footer {
 	background-color: #252525;
@@ -1151,7 +1242,9 @@ textarea, .wpcf7-form>p>label {
 	color: #fff;
 }
 /*--------------------------------------------------------------
-# Infinite scroll
+
+10. Infinite scroll
+
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
@@ -1166,7 +1259,9 @@ textarea, .wpcf7-form>p>label {
 }
 
 /*--------------------------------------------------------------
-# Media
+
+11. Media
+
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
@@ -1190,7 +1285,9 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Captions
+
+12. Captions
+
 --------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
@@ -1212,7 +1309,9 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Galleries
+
+13. Galleries
+
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
@@ -1282,11 +1381,13 @@ object {
 }
 
 /*--------------------------------------------------------------
-## Responsive
+
+14. Responsive
+
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-## Max Width 768
+01. Max Width 768
 --------------------------------------------------------------*/
 @media (min-width: 768px) {
 	.featured-post-xs{
@@ -1294,19 +1395,13 @@ object {
 	}
 }
 /*--------------------------------------------------------------
-## Min Width 1200px And Max Width 1299px
+02. Min Width 1200px And Max Width 1299px
 --------------------------------------------------------------*/
 @media (min-width: 1200px) and (max-width: 1299px) {
 
 }
 /*--------------------------------------------------------------
-## Min Width 992px And Max Width 1199px
---------------------------------------------------------------*/
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-/*--------------------------------------------------------------
-## Min Width 768px And Max Width 991px
+03. Min Width 768px And Max Width 991px
 --------------------------------------------------------------*/
 @media (min-width: 768px) and (max-width: 991px){
 	.block-category .featured-post-layout-1 .featured-post-wrap:nth-child(3n+1) .block-category-contents {
@@ -1368,7 +1463,7 @@ object {
 	}
 }
 /*--------------------------------------------------------------
-## Max Width 767px
+04. Max Width 767px
 --------------------------------------------------------------*/
 @media only screen and (max-width:767px) {
 	.woocommerce.category-filter.columns-4 ul.products li.product {
@@ -1474,7 +1569,7 @@ object {
 	}
 }
 /*--------------------------------------------------------------
-## Max Width 480px
+05. Max Width 480px
 --------------------------------------------------------------*/
 @media only screen and (max-width:480px) {
 	.woocommerce.category-filter.columns-4 ul.products li.product {
@@ -1491,7 +1586,7 @@ object {
 	}
 }
 /*--------------------------------------------------------------
-## Max Width 375px
+06. Max Width 375px
 --------------------------------------------------------------*/
 @media only screen and (max-width:375px) {
 	.woocommerce.category-filter.columns-4 ul.products li.product {

@@ -36,6 +36,11 @@ if ( ! function_exists( 'preferred_magazine_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
         /*
+         * WooCommerce Support
+         */
+        add_theme_support('woocommerce');
+
+        /*
          * Define custom image size
          */
         add_image_size( 'preferred-magazine-lg-thumb', 800, '700', true );
@@ -136,12 +141,12 @@ add_action( 'widgets_init', 'preferred_magazine_widgets_init' );
 function preferred_magazine_register_elementor_widgets() {
 
     if ( defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base') ) {
-        require get_template_directory() . '/inc/widgets/category-post-slider.php';
-        require get_template_directory() . '/inc/widgets/category-post.php';
-        require get_template_directory() . '/inc/widgets/most-popular-post.php';
-        require get_template_directory() . '/inc/widgets/trading-post.php';
-        require get_template_directory() . '/inc/widgets/featured-news.php';
-        require get_template_directory() . '/inc/widgets/product-filter.php';
+        require get_template_directory() . '/plugin/category-post-slider.php';
+        require get_template_directory() . '/plugin/category-post.php';
+        require get_template_directory() . '/plugin/most-popular-post.php';
+        require get_template_directory() . '/plugin/trading-post.php';
+        require get_template_directory() . '/plugin/featured-news.php';
+        require get_template_directory() . '/plugin/product-filter.php';
     }
 }
 add_action( 'elementor/widgets/widgets_registered', 'preferred_magazine_register_elementor_widgets' );
@@ -227,12 +232,16 @@ function preferred_magazine_cat_bg(){
         <?php
         $categories_list = get_the_category();
         foreach( $categories_list as $category ){
-            $preferred_magazine_cat_bg_color = get_theme_mod( 'category_color_' . $category->term_id );
+            $preferred_magazine_cat_bg_color = esc_attr( get_theme_mod( 'category_color_' . $category->term_id ) );
 
             if ( $preferred_magazine_cat_bg_color != '' ){
-                echo '<a class="category-has-bg" href="' . esc_url( get_category_link( $category->term_id ) ) . '" style="background:' . esc_attr( $preferred_magazine_cat_bg_color ) . '">'. esc_html( $category->cat_name ) .'</a>';
+                ?>
+                <a class="category-has-bg" href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" style="background:'<?php echo esc_attr( $preferred_magazine_cat_bg_color ); ?>'"><?php echo esc_html( $category->cat_name ); ?></a>';
+                <?php
             }else{
-                echo '<a class="category-no-bg" href="' . esc_url( get_category_link( $category->term_id ) ) . '">'. esc_html( $category->cat_name ) .'</a>';
+                ?>
+                <a class="category-no-bg" href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"><?php echo esc_html( $category->cat_name ); ?></a>
+                <?php
             }
         } ?>
     </div>
@@ -278,26 +287,6 @@ function preferred_magazine_active_plugins() {
 }
 
 /**
- * Kirki Plugin Admin Notice Dismiss
- */
-add_action( 'admin_notices', 'preferred_magazine_plugin_dismiss_notice' );
-function preferred_magazine_plugin_dismiss_notice() {
-    global  $pagenow;
-    if( $pagenow == 'customize.php' ) :
-    $user_id = get_current_user_id();
-    if ( !get_user_meta( $user_id, 'preferred_magazine_kirki_plugin_dismissed' ) )
-        echo '<p class="dismiss-button"><a href="?preferred_magazine_kirki_dismissed">'.esc_html( 'Dismiss' ).'</a></p>';
-    endif;
-}
-
-add_action( 'admin_init', 'preferred_magazine_kirki_plugin_dismissed' );
-function preferred_magazine_kirki_plugin_dismissed() {
-    $user_id = get_current_user_id();
-    if ( isset( $_GET['preferred_magazine_kirki_dismissed'] ) )
-        add_user_meta( $user_id, 'preferred_magazine_kirki_plugin_dismissed', 'true', true );
-}
-
-/**
  * Margin Top
  */
 function preferred_magazine_MarginTop(){
@@ -325,3 +314,44 @@ function preferred_magazine_elementor_widget_categories( $elements_manager ) {
 
 }
 add_action( 'elementor/elements/categories_registered', 'preferred_magazine_elementor_widget_categories' );
+
+
+/**
+ * WooCommerce
+ * Remove breadcrumb
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+
+/**
+ * Before the shop & product page loop hook
+ * Shop/archive & single product Page
+ * start div
+ */
+add_action( 'woocommerce_before_single_product', 'preferred_magazine_shop_page_start', 15 );
+add_action( 'woocommerce_before_shop_loop', 'preferred_magazine_shop_page_start', 10 );
+function preferred_magazine_shop_page_start() {
+    ?>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="mt-30 col-lg-9 col-md-8 col-12">
+    <?php
+}
+
+/**
+ * After the shop & product page loop hook
+ * Shop/archive & single product Page
+ * end div
+ */
+add_action( 'woocommerce_after_single_product', 'preferred_magazine_shop_page_end', 5 );
+add_action( 'woocommerce_after_shop_loop', 'preferred_magazine_shop_page_end', 10 );
+function preferred_magazine_shop_page_end(){
+    ?>
+            </div>
+        <?php get_sidebar(); ?>
+        </div>
+    </div>
+    <?php
+}
+
+
+

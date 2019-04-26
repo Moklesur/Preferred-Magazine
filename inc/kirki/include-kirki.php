@@ -55,13 +55,11 @@ if ( ! class_exists( 'Kirki' ) ) {
 						<a class="install-now button-primary button" data-slug="kirki" href="<?php echo esc_url_raw( $plugin_install_url ); ?>" aria-label="<?php esc_attr_e( 'Install Kirki Toolkit now', 'preferred-magazine' ); ?>" data-name="Kirki Toolkit">
 							<?php esc_html_e( 'Install Now', 'preferred-magazine' ); ?>
 						</a>
-                        <?php preferred_magazine_plugin_dismiss_notice(); ?>
 					<?php else : ?>
 						<p style="text-align:left;margin-top:0;"><?php esc_attr_e( 'You have installed Kirki. Activate it to take advantage of this theme\'s features in the customizer.', 'preferred-magazine' ); ?></p>
 						<a class="install-now button-secondary button change-theme" data-slug="kirki" href="<?php echo esc_url_raw( self_admin_url( 'plugins.php' ) ); ?>" aria-label="<?php esc_attr_e( 'Activate Kirki Toolkit now', 'preferred-magazine' ); ?>" data-name="Kirki Toolkit">
 							<?php esc_html_e( 'Activate Now', 'preferred-magazine' ); ?>
 						</a>
-                        <?php preferred_magazine_plugin_dismiss_notice(); ?>
 					<?php endif; ?>
 				</li>
 				<?php
