@@ -136,22 +136,6 @@ function preferred_magazine_widgets_init() {
 add_action( 'widgets_init', 'preferred_magazine_widgets_init' );
 
 /**
- * Custom Elementor widgets
- */
-function preferred_magazine_register_elementor_widgets() {
-
-    if ( defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base') ) {
-        require get_template_directory() . '/plugin/category-post-slider.php';
-        require get_template_directory() . '/plugin/category-post.php';
-        require get_template_directory() . '/plugin/most-popular-post.php';
-        require get_template_directory() . '/plugin/trading-post.php';
-        require get_template_directory() . '/plugin/featured-news.php';
-        require get_template_directory() . '/plugin/product-filter.php';
-    }
-}
-add_action( 'elementor/widgets/widgets_registered', 'preferred_magazine_register_elementor_widgets' );
-
-/**
  * Enqueue scripts and styles.
  */
 function preferred_magazine_scripts() {
@@ -292,6 +276,13 @@ function preferred_magazine_active_plugins() {
             'required'  => false,
         ),
         array(
+            'name'   => __( 'Preferred Magazine Core', 'boka' ),
+            'slug'   => 'Preferred-Magazine-Core',
+            'source' => 'https://github.com/Moklesur/Preferred-Magazine-Core/archive/main.zip',
+            'required'     => true, // If false, the plugin is only 'recommended' instead of required.
+            'external_url' => 'https://github.com/Moklesur/Preferred-Magazine-Core',
+        ),
+        array(
             'name'      => __( 'WooCommerce', 'preferred-magazine' ),
             'slug'      => 'woocommerce',
             'required'  => false,
@@ -311,24 +302,6 @@ function preferred_magazine_MarginTop(){
 
 // Remove the product rating display on product loops
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
-
-/**
- * @param $elements_manager
- * elementor Category Name
- */
-function preferred_magazine_elementor_widget_categories( $elements_manager ) {
-
-    $elements_manager->add_category(
-        'preferred_magazine',
-            array(
-                'title' => __( 'PM Widgets', 'preferred-magazine' ),
-                'icon' => 'fa fa-plug',
-            )
-    );
-
-}
-add_action( 'elementor/elements/categories_registered', 'preferred_magazine_elementor_widget_categories' );
-
 
 /**
  * WooCommerce

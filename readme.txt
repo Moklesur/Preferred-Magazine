@@ -4,7 +4,7 @@ Contributors: themetim
 Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.4
-Stable tag: 2.0
+Stable tag: 3.0
 Tags: blog, news, e-commerce, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, full-width-template, left-sidebar, right-sidebar, custom-colors, custom-header, theme-options
 
 == License ==
